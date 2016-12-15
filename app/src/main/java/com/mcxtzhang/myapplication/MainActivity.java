@@ -6,9 +6,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.mcxtzhang.pathanimlib.SysLoadAnimHelper;
 import com.mcxtzhang.pathanimlib.PathAnimView;
 import com.mcxtzhang.pathanimlib.StoreHouseAnimView;
+import com.mcxtzhang.pathanimlib.SysLoadAnimHelper;
+import com.mcxtzhang.pathanimlib.res.StoreHousePath;
 import com.mcxtzhang.pathanimlib.utils.PathParserUtils;
 
 public class MainActivity extends AppCompatActivity {
@@ -34,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         //动态设置 从StringArray里取
-        storeView2.setSourcePath(PathParserUtils.getPathFromStringArray(this, R.array.storehouse, 2));
+//        storeView2.setSourcePath(PathParserUtils.getPathFromStringArray(this, R.array.storehouse, 2));
+        storeView2.setSourcePath(PathParserUtils.getPathFromArrayFloatList(StoreHousePath.getPath("ADU", 1.1f, 16)));
 
         //动态设置Path实例
         pathAnimView1 = (PathAnimView) findViewById(R.id.pathAnimView1);
